@@ -1,0 +1,80 @@
+[
+    {
+      "type": "javaScript",
+      "config": {
+        "params": [],
+        "content": "return JSON.stringify([\n'https://www.google.com',\n'https://www.amazon.com',\n'https://apnews.com',\n'https://www.wikipedia.org',\n'https://www.kickstarter.com',\n'https://www.ieee.org',\n'https://www.foxnews.com',\n'https://www.cnn.com',\n'https://www.facebook.com',\n'https://www.mercedes-benz.com/en',\n'https://www.forbes.com',\n'https://www.bankless.com',\n'https://www.championat.com',\n'https://rumble.com',\n'https://pikabu.ru',\n'https://www.youtube.com',\n'https://docs.google.com',\n'https://github.com',\n'https://www.youtube.com',\n'https://rt.pornhub.com',\n'https://www.icloud.com/mail',\n'https://etherscan.io/gastracker',\n'https://twitter.com/home',\n'https://discord.com',\n'https://www.google.com',\n'https://www.youtube.com',\n'https://www.facebook.com',\n'https://www.amazon.com',\n'https://www.wikipedia.org',\n'https://www.twitter.com',\n'https://www.instagram.com',\n'https://www.linkedin.com',\n'https://www.whatsapp.com',\n'https://www.netflix.com',\n'https://www.zoom.us',\n'https://www.ebay.com',\n'https://www.microsoft.com',\n'https://www.shopify.com',\n'https://www.pinterest.com',\n'https://www.tiktok.com',\n'https://www.snapchat.com',\n'https://www.quora.com',\n'https://www.alibaba.com',\n'https://www.apple.com',\n'https://www.github.com',\n'https://www.adobe.com',\n'https://www.blogger.com',\n'https://www.yelp.com',\n'https://www.walmart.com',\n'https://www.etsy.com',\n'https://www.booking.com',\n'https://www.airbnb.com'\n\n].sort(() => .5 - Math.random()));",
+        "variable": "urlStr",
+        "remark": ""
+      }
+    },
+    {
+      "type": "toJson",
+      "config": {
+        "content": "urlStr",
+        "variable": "urlArray",
+        "remark": ""
+      }
+    },
+    {
+      "type": "newPage",
+      "config": {}
+    },
+    {
+      "type": "forLists",
+      "config": {
+        "content": "urlArray",
+        "variableIndex": "for_lits_index",
+        "variable": "for_lits_item",
+        "children": [
+          {
+            "type": "gotoUrl",
+            "config": {
+              "url": "${for_lits_item}",
+              "timeout": 30000,
+              "remark": ""
+            }
+          },
+          {
+            "type": "waitForSelector",
+            "config": {
+              "selector": "body",
+              "serial": 1,
+              "isShow": "1",
+              "timeout": 30000,
+              "remark": ""
+            }
+          },
+          {
+            "type": "waitTime",
+            "config": {
+              "timeoutType": "randomInterval",
+              "timeout": 5000,
+              "timeoutMin": 4000,
+              "timeoutMax": 7000,
+              "remark": ""
+            }
+          },
+          {
+            "type": "scrollPage",
+            "config": {
+              "distance": 0,
+              "type": "smooth",
+              "scrollType": "position",
+              "position": "bottom",
+              "remark": "",
+              "rangeType": "window",
+              "selectorRadio": "CSS",
+              "selector": "",
+              "serial": 1
+            }
+          }
+        ],
+        "remark": ""
+      }
+    },
+    {
+      "type": "closePage",
+      "config": {}
+    }
+  ]

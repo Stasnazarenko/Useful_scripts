@@ -1,0 +1,116 @@
+[
+    {
+      "type": "newPage",
+      "config": {}
+    },
+    {
+      "type": "gotoUrl",
+      "config": {
+        "url": "chrome-extension://ahdnhnlnaecjmmbpmadikcnibdldnika/home.html#unlock",
+        "timeout": 30000,
+        "remark": "open metamask log in page"
+      }
+    },
+    {
+      "type": "waitTime",
+      "config": {
+        "timeoutType": "fixedValue",
+        "timeout": 2500,
+        "timeoutMin": 1000,
+        "timeoutMax": 300000,
+        "remark": "wait",
+        "_copyItemIndex": "0_1",
+        "_copyItemType": ""
+      }
+    },
+    {
+      "type": "inputContent",
+      "config": {
+        "selectorRadio": "CSS",
+        "selector": "#password",
+        "serialType": "fixedValue",
+        "selectorType": "selector",
+        "element": "",
+        "serial": 1,
+        "serialMin": 1,
+        "serialMax": 50,
+        "intervals": 300,
+        "content": "${PASSWORD}",
+        "isRandom": "0",
+        "randomContent": "${PASSWORD}",
+        "randomInputNum": {
+          "min": 0.1,
+          "max": 10
+        },
+        "remark": "input password field"
+      }
+    },
+    {
+      "type": "waitTime",
+      "config": {
+        "timeoutType": "fixedValue",
+        "timeout": 1500,
+        "timeoutMin": 1000,
+        "timeoutMax": 300000,
+        "remark": "wait",
+        "_copyItemIndex": "0_2",
+        "_copyItemType": ""
+      }
+    },
+    {
+      "type": "click",
+      "config": {
+        "selectorRadio": "CSS",
+        "selector": ".button[data-testid]",
+        "selectorType": "selector",
+        "element": "",
+        "serialType": "fixedValue",
+        "serial": 1,
+        "serialMin": 1,
+        "serialMax": 50,
+        "button": "left",
+        "type": "click",
+        "remark": "click log in button"
+      }
+    },
+    {
+      "type": "waitTime",
+      "config": {
+        "timeoutType": "fixedValue",
+        "timeout": 1500,
+        "timeoutMin": 1000,
+        "timeoutMax": 300000,
+        "remark": "wait",
+        "_copyItemIndex": "0_4",
+        "_copyItemType": ""
+      }
+    },
+    {
+      "type": "waitForSelector",
+      "config": {
+        "selectorRadio": "CSS",
+        "selector": ".wallet-overview__balance",
+        "serial": 1,
+        "isShow": "1",
+        "timeout": 30000,
+        "variable": "",
+        "remark": "wait for the dashboard visibility"
+      }
+    },
+    {
+      "type": "waitTime",
+      "config": {
+        "timeoutType": "fixedValue",
+        "timeout": 2500,
+        "timeoutMin": 1000,
+        "timeoutMax": 300000,
+        "remark": "wait",
+        "_copyItemIndex": "0_3",
+        "_copyItemType": ""
+      }
+    },
+    {
+      "type": "closePage",
+      "config": {}
+    }
+  ]
